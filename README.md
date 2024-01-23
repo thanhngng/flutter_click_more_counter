@@ -1,8 +1,7 @@
-<!--
-A click counter that show message to tell the users that they need to click more to continue.
--->
+# flutter_click_more_counter
 
-The feature of this lib is the same as active the developer mode in Android devices.
+**A click counter that show message to tell the users that they need to click more to continue.**
+**The case using this lib as same as active the developer mode in Android devices.**
 
 ![demo.gif](demo.gif)
 
@@ -16,21 +15,18 @@ Use this plugin in your Flutter when:
 
 ## Getting started
 
-Add dependency
-
-### Add dependency
+#### Add dependency
 This plugin using FlutterToast to show message, you need add this dependency as well.
 
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
-  # add flutter_screenutil
-  flutter_click_more_counter: ^1.0.0
-  fluttertoast: ^8.2.4
+  flutter_click_more_counter: ^1.0.0 <-- add this line
+  fluttertoast: ^8.2.4 <-- add this line
 ```
 
-### Add the following imports to your Dart code
+#### Add the following imports to your Dart code
 
 ```dart
   import 'package:flutter_click_more_counter/flutter_click_more_counter.dart';
@@ -38,26 +34,71 @@ dependencies:
 
 ## Usage
 
-### Create ClickMoreCounter
+#### Create ClickMoreCounter
 
 ```dart
-  final _clickCounter = ClickMoreCounter();
+  final clickCounter = ClickMoreCounter();
 ```
 
-### Call function inside your button click event
+#### Call function inside your button click event
 ```dart
-    _clickCounter.run(() { });
+    clickCounter.run(() { });
 ```
 
 #### Example
 ```dart
-  void onButtonClick() {
-      _clickCounter.run(() {
-        // do something
-      });
-    }
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final clickCounter = ClickMoreCounter();
+
+  void onClick() {
+    clickCounter.run(() {
+      showDialog(
+              useSafeArea: false,
+              context: context,
+              builder: (BuildContext context) => const AlertDialog(
+                title: Text("Flutter Click More Counter"),
+                content: Text("Hello there"),
+              ));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Click the button more than 5 times',
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: onClick,
+        tooltip: 'Click',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
 ```
 
-## Example
+## Example code
 
-[example demo]()
+[example demo](https://github.com/thanhngng/flutter_click_more_counter/tree/main/example)
