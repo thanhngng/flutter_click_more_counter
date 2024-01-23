@@ -1,6 +1,7 @@
 # flutter_click_more_counter
 
-**A click counter that show message to tell the users that they need to click more to continue.**
+**A counter click event that show message to tell the users that they need to click more to continue.**
+
 **The case using this lib as same as active the developer mode in Android devices.**
 
 ![demo.gif](demo.gif)
@@ -22,14 +23,14 @@ This plugin using FlutterToast to show message, you need add this dependency as 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_click_more_counter: ^1.0.0 <-- add this line
-  fluttertoast: ^8.2.4 <-- add this line
+  flutter_click_more_counter: ^1.0.0
+  fluttertoast: ^8.2.4
 ```
 
 #### Add the following imports to your Dart code
 
 ```dart
-  import 'package:flutter_click_more_counter/flutter_click_more_counter.dart';
+import 'package:flutter_click_more_counter/flutter_click_more_counter.dart';
 ```
 
 ## Usage
@@ -37,12 +38,12 @@ dependencies:
 #### Create ClickMoreCounter
 
 ```dart
-  final clickCounter = ClickMoreCounter();
+final clickCounter = ClickMoreCounter();
 ```
 
 #### Call function inside your button click event
 ```dart
-    clickCounter.run(() { });
+clickCounter.run(() { });
 ```
 
 #### Example
@@ -58,9 +59,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  /// here
   final clickCounter = ClickMoreCounter();
 
+  /// click event
   void onClick() {
+    /// here
     clickCounter.run(() {
       showDialog(
               useSafeArea: false,
