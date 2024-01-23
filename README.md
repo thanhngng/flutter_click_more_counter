@@ -4,7 +4,7 @@
 
 **The case using this lib as same as active the developer mode in Android devices.**
 
-![demo.gif](demo.gif | width=120)
+<img src="https://i.imgur.com/xcMYuYy.gif" width="200"/>
 
 ## Features
 
