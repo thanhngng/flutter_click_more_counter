@@ -46,6 +46,15 @@ final clickCounter = ClickMoreCounter();
 clickCounter.run(() { });
 ```
 
+#### You can choose total click or how many click will display the messages
+```dart
+final clickCounter = ClickMoreCounter(
+    totalClick: 10, //total number of times needed to click
+    displayMessageClick: 5, //Number of click to show the message
+    resetCounterMilliseconds: 3000, //delay time, counter will be reset after [resetCounterMilliseconds]
+  );
+```
+
 #### Example
 ```dart
 
