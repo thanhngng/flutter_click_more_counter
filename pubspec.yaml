@@ -1,12 +1,12 @@
 name: flutter_click_more_counter
 description: "A Flutter plugin for handle the click action, you can hidden something content in your app for debug, tracking issue"
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/thanhngng/flutter_click_more_counter
 homepage: https://github.com/thanhngng/flutter_click_more_counter
 issue_tracker: https://github.com/thanhngng/flutter_click_more_counter/issues
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: '>=2.19.6 <4.0.0'
 
 dependencies:
   flutter:
